@@ -29,3 +29,18 @@ def ligne_valide(grille):
             return False
     return True
 
+
+# Vérifiez les nombres répétés de 1 à 9 dans les colonnes
+def colonne_valide(grille):
+    for i in range(9):
+        colonne = []
+        for j in range(9):
+            colonne.append(grille[j][i])
+        if len(set(colonne)) == 9:
+            # print(i, len(set(colonne)))
+            continue
+        else:
+            # print("------------stop")
+            # print(i, len(set(colonne)))
+            return False
+    return True
