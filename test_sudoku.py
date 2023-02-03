@@ -80,6 +80,31 @@ class TestEx2(unittest.TestCase):
         self.assertTrue(sudoku.colonne_valide(grille_conlonne_valide))
         self.assertFalse(sudoku.colonne_valide(grille_conlonne_non_valide))
 
+    def test_sousGrille_valide(self):
+        grille_sousGrille_valide = [[1, 2, 3, 1, 2, 3, 1, 2, 3],
+                                    [4, 5, 6, 4, 5, 6, 4, 5, 6],
+                                    [7, 8, 9, 7, 8, 9, 7, 8, 9],
+                                    [9, 1, 2, 3, 4, 5, 6, 7, 8],
+                                    [3, 4, 5, 6, 7, 8, 9, 1, 2],
+                                    [6, 7, 8, 9, 1, 2, 3, 4, 5],
+                                    [8, 9, 1, 2, 3, 4, 5, 6, 7],
+                                    [2, 3, 4, 5, 6, 7, 8, 9, 1],
+                                    [5, 6, 7, 8, 9, 1, 2, 3, 4]]
+
+        grille_sousGrille_non_valide = [[1, 2, 3, 1, 1, 1, 7, 8, 9],
+                                        [4, 5, 6, 1, 1, 1, 1, 2, 3],
+                                        [7, 8, 9, 1, 1, 1, 4, 5, 6],
+                                        [9, 1, 2, 3, 4, 5, 6, 7, 8],
+                                        [3, 4, 5, 6, 7, 8, 9, 1, 2],
+                                        [6, 7, 8, 9, 1, 2, 3, 4, 5],
+                                        [8, 9, 1, 2, 3, 4, 5, 6, 7],
+                                        [2, 3, 4, 5, 6, 7, 8, 9, 1],
+                                        [5, 6, 7, 8, 9, 1, 2, 3, 4]
+                                        ]
+
+        self.assertTrue(sudoku.sousGrille_valide(grille_sousGrille_valide))
+        self.assertFalse(sudoku.sousGrille_valide(grille_sousGrille_non_valide))
+
 
 if __name__ == '__main__':
     unittest.main()
