@@ -57,3 +57,12 @@ def sousGrille_valide(grille):
                         return False
                     sousGrille.append(grille[y + i][x + j])
     return True
+
+
+# Vérifiez que les règles du Sudoku sont respectées
+def grille_valide(grille):
+    if not taille_valide(grille):
+        return False
+    else:
+        return ligne_valide(grille) & colonne_valide(grille) & sousGrille_valide(grille)
+
