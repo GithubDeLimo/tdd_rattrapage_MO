@@ -21,11 +21,11 @@ def ligne_valide(grille):
         for j in range(9):
             ligne.append(grille[i][j])
         if len(set(ligne)) == 9:
-            print(i, len(set(ligne)))
+            # print(i, len(set(ligne)))
             continue
         else:
-            print("------------stop")
-            print(i, len(set(ligne)))
+            # print("------------stop")
+            # print(i, len(set(ligne)))
             return False
     return True
 
@@ -43,4 +43,17 @@ def colonne_valide(grille):
             # print("------------stop")
             # print(i, len(set(colonne)))
             return False
+    return True
+
+
+# Vérifiez les nombres répétés de 1 à 9 dans les sous grilles 3*3
+def sousGrille_valide(grille):
+    for y in [0, 3, 6]:
+        for x in [0, 3, 6]:
+            sousGrille = []
+            for i in range(0, 3):
+                for j in range(0, 3):
+                    if grille[y + i][x + j] in sousGrille:
+                        return False
+                    sousGrille.append(grille[y + i][x + j])
     return True
