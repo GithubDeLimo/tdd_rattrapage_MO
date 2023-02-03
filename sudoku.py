@@ -13,3 +13,19 @@ def taille_valide(grille):
                 return False
         return True
 
+
+# Vérifiez les nombres répétés de 1 à 9 dans les lignes
+def ligne_valide(grille):
+    for i in range(9):
+        ligne = []
+        for j in range(9):
+            ligne.append(grille[i][j])
+        if len(set(ligne)) == 9:
+            print(i, len(set(ligne)))
+            continue
+        else:
+            print("------------stop")
+            print(i, len(set(ligne)))
+            return False
+    return True
+
